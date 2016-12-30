@@ -74,7 +74,10 @@ public class Login extends JFrame{
                     String unit = user.getString("unit");
 
                     // Launch main activity
-                    JOptionPane.showMessageDialog(this, "Welcome " + username + "!\n Your unit is " + unit + ".");
+                    JFrame homeTrashAuditFrame = new HomeTrashAuditFrame(username, unit);
+                    homeTrashAuditFrame.setVisible(true);
+                    setVisible(false);
+                    dispose();
                 } else {
                     String errorMsg = jObj.getString("error_msg");
                     JOptionPane.showMessageDialog(this, errorMsg);
